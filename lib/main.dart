@@ -1,4 +1,6 @@
-import 'package:allticles_app/presentation/signin_view.dart';
+import 'package:allticles_app/presentation/screens/home_view.dart';
+import 'package:allticles_app/presentation/screens/signin_view.dart';
+import 'package:allticles_app/presentation/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,10 +31,16 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.green),
         useMaterial3: true,
+        fontFamily: 'NunitoSans',
       ),
-      home: const SigninView(),
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/sign-in',
+      routes: {
+        '/sign-in': (context) => const SigninView(),
+        '/' : (context) => const HomeView(),
+      },
     );
   }
 }
